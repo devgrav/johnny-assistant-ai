@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "registry": "https://clawhub.ai",
+  "slug": "captcha-relay",
+  "ownerHandle": "0xclanky",
+  "installedAt": 1789856414377,
+  "artifact": {
+    "kind": "archive",
+    "sha256": "3f0fe7921319e01888e1c82e49620f476c538cb93654010a853134bb88c51e93",
+    "integrity": "sha256-Pw/nkhMZ4BiI4cguSWIPR2xTjLk2VAEKhTE0u4jFHpM="
+  },
+  "skillFile": {
+    "path": "SKILL.md",
+    "sha256": "08090197fa067339d3320236c1e2c84920e276151564a5fcb69e2a75a552cfa5"
+  },
+  "fileTreeSha256": "sha256:36cd9cab7c8cab3d743c840c1f5b690291677ee1fcd1448befd74b8a76cb71fa",
+  "installedVersion": "2.1.0"
+}

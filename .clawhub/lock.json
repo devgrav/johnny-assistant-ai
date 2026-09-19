@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "skills": {
+    "captcha-relay": {
+      "version": "2.1.0",
+      "registry": "https://clawhub.ai",
+      "ownerHandle": "0xclanky",
+      "installedAt": 1789856414377,
+      "artifact": {
+        "kind": "archive",
+        "sha256": "3f0fe7921319e01888e1c82e49620f476c538cb93654010a853134bb88c51e93",
+        "integrity": "sha256-Pw/nkhMZ4BiI4cguSWIPR2xTjLk2VAEKhTE0u4jFHpM="
+      },
+      "skillFile": {
+        "path": "SKILL.md",
+        "sha256": "08090197fa067339d3320236c1e2c84920e276151564a5fcb69e2a75a552cfa5"
+      },
+      "fileTreeSha256": "sha256:36cd9cab7c8cab3d743c840c1f5b690291677ee1fcd1448befd74b8a76cb71fa",
+      "verification": {
+        "schema": "clawhub.skill.verify.v1",
+        "ok": false,
+        "decision": "fail",
+        "reasons": [
+          "security.status_not_clean"
+        ],
+        "card": {
+          "available": true,
+          "path": "skill-card.md",
+          "url": "https://wry-manatee-359.convex.site/api/v1/skills/captcha-relay/card?ownerHandle=0xclanky&version=2.1.0",
+          "sha256": "d20b0061f1c5218812b57952a054d6c6ee2fea5efa9bb5e3bb93e2c862fe1f39",
+          "size": 2744,
+          "contentType": "text/markdown; charset=utf-8"
+        },
+        "artifact": {
+          "sourceFingerprint": "83b1de032d045bb981c1ca2618343c27570b4123161ef31af52994b22c6060a1",
+          "bundleFingerprints": [
+            "a96cb46db715ff9ff9c57c99c7e298a56702ef7e7fabee03f326e3c343be8480",
+            "8e3257a871e01ee975262e180f919631224e355e2f357294d7d83b5f8816e07f"
+          ],
+          "files": [
+            {
+              "path": "ARCHITECTURE.md",
+              "size": 4291,
+              "sha256": "9a0eb1cb3ebeff561ba557b735dfa0013756ca6df7643265e9984f38e0ce29a0",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "README.md",
+              "size": 4073,
+              "sha256": "561a50ab900796ade5c9dff9eba4693f5364dfad3cd7904a238f54eae6c9ef9d",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "SKILL.md",
+              "size": 3700,
+              "sha256": "08090197fa067339d3320236c1e2c84920e276151564a5fcb69e2a75a552cfa5",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "TAILSCALE.md",
+              "size": 3035,
+              "sha256": "ae5aa19374c5482deee41681899cc5017f9459151c0527df87ebf8152c5ba1cf",
+              "contentType": "text/markdown"
+            },
+            {
+              "path": "browser-relay-cli.js",
+              "size": 981,
+              "sha256": "e3b2840f0c4ce684f61dfdf309fc2cf775531e69a343fea1a91d9ed4b5da2e32",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "fallback/screenshot.js",
+              "size": 5275,
+              "sha256": "000fc02aca27288ef29e671ee91ff59f437f0081938d7d900c8e8320170cbf3c",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "index.js",
+              "size": 5507,
+              "sha256": "d09219f0f2cdb19bf8338589347990edeef234af8366d8bf242c5af981437b13",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "lib/browser-relay.js",
+              "size": 8067,
+              "sha256": "fd090a1254c9982c95c1877628c8cb805cad9ebb92676e1a65500d33d7945222",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "lib/cdp.js",
+              "size": 2829,
+              "sha256": "346f440acfc052b1d82063e8d378d7e080e256cd10248976645145a5e81f9acb",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "lib/detect.js",
+              "size": 2841,
+              "sha256": "1c0b865d2ac9a058ae1c475fb3714c29414fd037d42b88960beab93bb60c6941",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "lib/inject.js",
+              "size": 4654,
+              "sha256": "6af0e31cdb9acbda3d47cf8ec97dbbe1b090253b56fa85c1abbfb89113e0d4b2",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "lib/server.js",
+              "size": 2683,
+              "sha256": "28396f1f971ba3ecaba71f9f01795decb4b0206505908029f954f23c1bcea7d4",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "lib/templates/browser-relay.html",
+              "size": 7683,
+              "sha256": "56f1f80877863d30ebbb3043a21c5ecc9230e7eda631001e974a330d00fdf9bf",
+              "contentType": "text/html"
+            },
+            {
+              "path": "lib/templates/hcaptcha.html",
+              "size": 1843,
+              "sha256": "c2f56e7db3ea3d086c51c8f172f904a4029a1a690975b4ac8754b0b8fbb55374",
+              "contentType": "text/html"
+            },
+            {
+              "path": "lib/templates/recaptcha-v2.html",
+              "size": 1922,
+              "sha256": "3adf6f84a254c45eda46c46860a86a906a762ae889fe2880a88c9d5081efe3fa",
+              "contentType": "text/html"
+            },
+            {
+              "path": "lib/templates/turnstile.html",
+              "size": 1867,
+              "sha256": "990fcc1355aa4acc335b42be79bb7cfea174a168ffd2b2eb87a9e7adf5733110",
+              "contentType": "text/html"
+            },
+            {
+              "path": "lib/tunnel.js",
+              "size": 4266,
+              "sha256": "e8c0580a15c06bad581036d66e8874eef3532c697b44438365120d91b59620b7",
+              "contentType": "text/javascript"
+            },
+            {
+              "path": "package-lock.json",
+              "size": 17617,
+              "sha256": "68046c9e16d28cbb7f7b9edc755b5e7394bfd168ac4232515d2dee76611722c0",
+              "contentType": "application/json"
+            },
+            {
+              "path": "package.json",
+              "size": 443,
+              "sha256": "4853b64718018866a6ea77d241192bf924001f3f6a4f30a0ab2cbaa944a6159e",
+              "contentType": "application/json"
+            }
+          ]
+        },
+        "provenance": {
+          "source": "unavailable",
+          "reason": "No server-resolved GitHub import provenance is stored for this version."
+        },
+        "security": {
+          "status": "suspicious",
+          "passed": false,
+          "rawStatus": "suspicious",
+          "verdict": "suspicious",
+          "confidence": "high",
+          "summary": "This CAPTCHA relay exposes browser and token-solving workflows over the network without enough access controls, so users should review it carefully before installing.",
+          "model": null,
+          "checkedAt": 1789079157343,
+          "scannerReports": {
+            "aig": null,
+            "skillspector": null
+          }
+        },
+        "signature": {
+          "status": "unsigned"
+        }
+      }
+    }
+  }
+}

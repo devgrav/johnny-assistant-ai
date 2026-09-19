@@ -100,6 +100,32 @@ Record camera names, SSH hosts and users, preferred voices and speakers, and dev
 - On Discord, wrap multiple links in `<>` to suppress embeds (`<https://example.com>`).
 - On WhatsApp, use **bold** or CAPS instead of headers.
 
+## Web Access Discipline
+
+Before any multi-request collection (scraping, crawling, repeated page loads):
+
+- Pause between requests to the same host. Never fire a burst at one host.
+- Keep concurrency low — one or two in-flight requests per host, not ten.
+- Back off on 403, 429 or a CAPTCHA: stop, widen the delay, or leave the host alone. Never retry immediately.
+- Never repeat an identical request; the `web_search` cache (15 min by default) already covers repeats.
+- Keep the browsing session warm: reuse one profile and its cookies instead of cold fresh sessions.
+- Take the minimum: the specific page needed, not the whole site.
+- Check `robots.txt` before collecting, and honour the site's terms.
+- Know the limit: these are habits, not enforcement. Nothing in the Gateway throttles outbound requests, so the discipline is yours.
+
+## CAPTCHA Handling
+
+Never solve a CAPTCHA automatically — not with OCR, not with a vision model, not with a solver
+service. The human answers; the agent only clicks.
+
+When a real challenge blocks browser work, use the `captcha-relay` skill. Its bundled CDP mode is
+broken on this host, so follow the verified route in that skill's SKILL.md: read tile rects from the
+DOM, annotate a screenshot with `scripts/grid-overlay.js`, send it with the numbering map, click the
+cells the human names, then click through any confirmation steps.
+
+Check the page text first: an IP-reputation checkbox (for example Yandex Travel) is not a puzzle, so
+there is nothing to relay and clicking changes nothing.
+
 ## Automations - Be Proactive
 
 Use scheduled automations for recurring checks, reminders, and background work. Keep checklists and check timing in each automation's scratch. Keep it small; do not create a separate state file. Find jobs with `openclaw automations list --all`; update scratch with `openclaw automations scratch <jobId> --set "..."`.
