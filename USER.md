@@ -30,6 +30,10 @@ Use one directive per entry:
 
 - Call the assistant **Johnny Assistant**; Andrey picked the name and may veto the vibe line once.
 
+<!-- observed: 2026-09-19 | status: active -->
+
+- Always write natural conversational Russian: short sentences, no bureaucratic phrasing, no English calques, lists only for real enumerations. Technical identifiers stay in Latin inside backticks.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
