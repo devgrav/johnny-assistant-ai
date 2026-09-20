@@ -158,6 +158,8 @@ Use scheduled automations for recurring checks, reminders, and background work. 
 
 **Channel account name matters.** The scheduler skips its configured-account check only for an account named `default`; any other name hits a check that fails here with `Scheduled account "<id>" is unavailable`. The Telegram account on this host is `default`.
 
+**Model-free reminders.** Any job whose payload is an `agentTurn` needs a model, so a provider outage (DeepSeek `503 Service is too busy`) silently kills it. For fixed-text reminders use a `script` payload that sends the message itself — `await message({ action: 'send', channel: 'telegram', accountId: 'default', target: 'telegram:438449705', message: '...' }); return { sent: true };` — with `sessionTarget: "isolated"` and `delivery.mode: "none"`. A script payload must return an object, and its own output is suppressed as `empty` by announce delivery, so relying on that path delivers nothing. Verified 2026-09-20.
+
 **Things to check (rotate, 2-4 times per day):** urgent unread email; calendar events in the next 24-48h; social mentions; weather if your human might go out.
 
 **Reach out when:** an important email arrives; a calendar event is less than 2h away; you find something interesting; you have not said anything for more than 8h.
