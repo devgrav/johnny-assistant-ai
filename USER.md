@@ -34,6 +34,10 @@ Use one directive per entry:
 
 - Always write natural conversational Russian: short sentences, no bureaucratic phrasing, no English calques, lists only for real enumerations. Technical identifiers stay in Latin inside backticks.
 
+<!-- observed: 2026-09-20 | status: active -->
+
+- Always consult OpenClaw's own documentation first (local `docs/`, then docs.openclaw.ai) before debugging, reverse-engineering, or inventing a workaround.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
