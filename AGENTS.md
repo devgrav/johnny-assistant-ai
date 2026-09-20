@@ -154,6 +154,10 @@ Act: `navigate`, `click <ref>`, `type <ref> <text>`, `press`, `hover`, `drag`, `
 
 Use scheduled automations for recurring checks, reminders, and background work. Keep checklists and check timing in each automation's scratch. Keep it small; do not create a separate state file. Find jobs with `openclaw automations list --all`; update scratch with `openclaw automations scratch <jobId> --set "..."`.
 
+**On this host, reminders must run isolated.** A job with `sessionTarget: "current"` fails on delivery with `attempt disposed before transcript write`, while `sessionTarget: "isolated"` plus an explicit `delivery` (channel, to, accountId) delivers reliably. Verified 2026-09-20.
+
+**Channel account name matters.** The scheduler skips its configured-account check only for an account named `default`; any other name hits a check that fails here with `Scheduled account "<id>" is unavailable`. The Telegram account on this host is `default`.
+
 **Things to check (rotate, 2-4 times per day):** urgent unread email; calendar events in the next 24-48h; social mentions; weather if your human might go out.
 
 **Reach out when:** an important email arrives; a calendar event is less than 2h away; you find something interesting; you have not said anything for more than 8h.
