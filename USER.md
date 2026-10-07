@@ -42,6 +42,10 @@ Use one directive per entry:
 
 - Before doing a complex task against an external tool or service, first check whether a maintained MCP server (or another first-class connector) already exists for it, instead of hand-rolling web scraping.
 
+<!-- observed: 2026-10-07 | status: active -->
+
+- Always plan and discuss the approach before starting implementation; do not jump straight to building.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
