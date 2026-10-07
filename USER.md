@@ -38,6 +38,10 @@ Use one directive per entry:
 
 - Always consult OpenClaw's own documentation first (local `docs/`, then docs.openclaw.ai) before debugging, reverse-engineering, or inventing a workaround.
 
+<!-- observed: 2026-10-07 | status: active -->
+
+- Before doing a complex task against an external tool or service, first check whether a maintained MCP server (or another first-class connector) already exists for it, instead of hand-rolling web scraping.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
