@@ -8,6 +8,7 @@
 - **Tutu MCP:** подключён, `mcp.servers.tutu`, Streamable HTTP без авторизации, 17 инструментов.
 - **Следилка за балансом:** automation `fe6e07c6-11f3-466a-a52d-984896eb3ba2` — раз в 4 часа проверяет баланс DeepSeek (`openclaw status --usage --json`), шлёт в Telegram при < $3. Скрипт без модели.
 - **Git:** репо `git@github.com:devgrav/johnny-assistant-ai.git` (приватное), ветка `master`. Правило: коммит = сразу push. `node_modules/` в `.gitignore`.
+- **Оптимизация токенов (2026-10-07):** `heartbeat.model` = flash, `heartbeat.every` = `2h`, `model.fallbacks` = flash. Правка через `openclaw config patch --stdin` (merge), hot-reload, бэкап `openclaw.json.bak.*`. Рекомендовано: hard-limit в ЛК DeepSeek (у ассистента доступа нет).
 
 ## Решения и уроки
 
