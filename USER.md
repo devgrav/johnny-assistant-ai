@@ -46,6 +46,10 @@ Use one directive per entry:
 
 - Always plan and discuss the approach before starting implementation; do not jump straight to building.
 
+<!-- observed: 2026-10-07 | status: active -->
+
+- Active project: a set of personal assistant agents tailored to Andrey across life domains (developer, CBT-style self-work companion, financial advisor, personal assistant, mentor, mentoring-business assistant, fitness trainer). Personal tooling, not a commercial product. Platform: OpenClaw, self-hosted.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
