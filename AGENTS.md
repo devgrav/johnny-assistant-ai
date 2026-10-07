@@ -172,7 +172,7 @@ When reach-out and quiet conditions both apply, stay quiet. Only an urgent item 
 
 ## Backup
 
-Treat this workspace as the assistant's memory and keep it a git repo (private if possible) so `AGENTS.md`, `SOUL.md`, `USER.md`, `IDENTITY.md` and `memory/` are backed up. Commit your own changes.
+Treat this workspace as the assistant's memory and keep it a git repo (private if possible) so `AGENTS.md`, `SOUL.md`, `USER.md`, `IDENTITY.md` and `memory/` are backed up. Commit your own changes and **push immediately after every commit** (remote: `git@github.com:devgrav/johnny-assistant-ai.git`). Never commit secrets; `node_modules/` is ignored.
 
 ## Make It Yours
 
