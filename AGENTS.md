@@ -168,6 +168,16 @@ Record camera names, SSH hosts and users, preferred voices and speakers, and dev
 
 **SecretRefs migration gotcha (2026-10-08):** a `secrets apply` plan target must use the exact registry `targetType` — for channel accounts it's the path with a literal `.*` (e.g. `channels.telegram.accounts.*.botToken`), for gateway it's `gateway.auth.token`. Do NOT set `accountId` on channel-account targets: telegram's contract has no `accountIdPathSegmentIndex`, so an explicit accountId makes the target fail to resolve (the account id is already encoded in the path `...accounts.default.botToken`). Store ref shape: `{source:"store",provider:"default",id:"UPPER_NAME"}` (id `^[A-Z][A-Z0-9_]{0,127}$`). Seed the store non-interactively with `openclaw secrets store set NAME --kind secret --value-file -` (value on stdin). Flow: store set → write plan → `secrets apply --dry-run` → `secrets apply` → `secrets audit --check`.
 
+**Telegram multi-bot forum (суперчат) gotcha (2026-10-08):** несколько ботов в одной forum-супергруппе, каждый отвечает в своём топике без `@тега`. Группа «Open claw assistants» (`-1003946723344`): топик 3 = «Johnny» → основной бот, топик 4 = «Финконсультант» → фин-бот.
+
+Порядок для нового бота:
+1. Бот должен быть **админом** в группе — иначе privacy-режим: не-админ видит только команды/ответы/`@упоминания`, обычные сообщения в топике до него не доходят. Альтернатива: BotFather `/setprivacy` → Disable.
+2. ID топика ловится из логов: `journalctl --user -u openclaw-gateway | grep 'Inbound message telegram:group:'` → `telegram:group:<chatId>:topic:<N>`. ID топика — положительное целое; «General» всегда 1.
+3. Аккаунт к агенту — top-level `bindings[]` (`match.channel: "telegram"`, `match.accountId`).
+4. Отключить обязательное упоминание в своём топике — per-account конфиг: `channels.telegram.accounts.<accountId>.groups.<chatId>.topics.<threadId>.requireMention = false`. Тогда бот отвечает на всё в своём топике без `@тега`, а в чужих молчит (по умолчанию `requireMention: true`).
+
+Ключевое: `groups` задаётся **per-account** (`channels.telegram.accounts.<id>.groups`), а не в корне `channels.telegram.groups` — иначе `requireMention: false` применится к обоим ботам сразу и будет перекрёстная болтовня. Конфиг подхватывается релоадом канала без рестарта гейтвея.
+
 ### Browser
 
 Verification first: `openclaw browser doctor`, `status`, `start [--headless]`, `stop`, `tabs`.
