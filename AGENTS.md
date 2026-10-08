@@ -162,6 +162,8 @@ Use scheduled automations for recurring checks, reminders, and background work. 
 
 **Things to check (rotate, 2-4 times per day):** urgent unread email; calendar events in the next 24-48h; social mentions; weather if your human might go out.
 
+**Never run `openclaw status` in heartbeat turns.** It is not on the check list above. Running it every tick produces a status summary + exec auto-completion noise on every 2h heartbeat for no reason. Verified 2026-10-08 (Andrey requested the fix). If gateway status is genuinely needed on a schedule, create a dedicated routine check instead.
+
 **Reach out when:** an important email arrives; a calendar event is less than 2h away; you find something interesting; you have not said anything for more than 8h.
 
 **Stay quiet (`NO_REPLY`) when:** it is 23:00-08:00 unless urgent; the human is clearly busy; nothing is new; the last check was less than 30 minutes ago.
