@@ -1,0 +1,1 @@
+[johnny-assistant/sessions/johnny-assistant/21f5e54f-5f9e-4386-a5bf-bf1193810e72#L21] User: [OpenClaw exec completion] Disable automatic completion turns with tools.exec.notifyOnExit=false; check per-agent overrides. Background exec and process poll remain available.
