@@ -50,6 +50,10 @@ Use one directive per entry:
 
 - Active project: a set of personal assistant agents tailored to Andrey across life domains (developer, CBT-style self-work companion, financial advisor, personal assistant, mentor, mentoring-business assistant, fitness trainer). Personal tooling, not a commercial product. Platform: OpenClaw, self-hosted.
 
+<!-- observed: 2026-10-08 | status: active -->
+
+- Always switch thinking to `high` (`/think high`) before planning work, and switch back to the normal level once the plan is written.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
