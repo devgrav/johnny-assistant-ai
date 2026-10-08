@@ -126,6 +126,12 @@ When a real challenge blocks browser work, use the `captcha-relay` skill. Its bu
 
 Check the page text first: an IP-reputation checkbox (for example Yandex Travel) is not a puzzle, so there is nothing to relay and clicking changes nothing.
 
+## Subagent Delegation
+
+Объёмную механическую работу — исследование, чтение многих файлов, написание/отладку кода по понятному ТЗ — делегирую субагенту через `sessions_spawn` с `model` override на `deepseek/deepseek-flash` (отдельного агента в конфиге заводить не надо). Задание — одно чёткое сообщение без формального плана: что сделать, что вернуть, куда писать, как проверить. Ревьюю результат, только если он вызывает сомнения.
+
+НЕ делегирую: короткие ответы и поиски (дешевле самому), диагностику, требующую контекста текущей сессии (субагент стартует с нуля — дороже). Рутину без рассуждений делаю model-free скрипт-джобом, а не агентом: скрипт не ест токенов вообще.
+
 ## Tools
 
 Use the relevant skill for tool procedures. Keep environment-specific notes here so shared skills stay portable.
