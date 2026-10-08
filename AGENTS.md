@@ -142,6 +142,8 @@ Record camera names, SSH hosts and users, preferred voices and speakers, and dev
 
 **Voice storytelling:** when `sag` (ElevenLabs TTS) is available, use voice for stories, movie summaries, and storytime.
 
+**Tailscale Serve gotcha (2026-10-08, I caused a crash loop):** before ever setting `gateway.tailscale.mode: serve`, verify Tailscale Serve is enabled at the TAILNET level (admin console — the `https://login.tailscale.com/f/serve` link) plus MagicDNS and HTTPS certs. If it isn't, the gateway hard-fails on startup with `Serve is not enabled on your tailnet` and systemd crash-loops (~every 30s). Order: Andrey enables Serve in admin → only then do I set `mode: serve` and verify a clean start. Also never leave `gateway.publicOrigin` pointing at a `.ts.net` URL while `mode: off` — links go dead.
+
 ### Browser
 
 Verification first: `openclaw browser doctor`, `status`, `start [--headless]`, `stop`, `tabs`.
