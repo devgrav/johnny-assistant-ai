@@ -40,7 +40,7 @@
 - Завести отдельного агента `financial-agent` в конфиге (`openclaw config`, merge, с бэкапом).
 - Дешёвые дефолты: heartbeat на `flash` и редкий, `thinkingDefault=low`, compaction ~200k.
 - Привязать к новому Telegram-аккаунту (бот из этапа 2).
-- Модель — **GPT по подписке** (решено, DeepSeek fallback).
+- Модель — **DeepSeek V4 Pro** (пока, как основной ассистент); GPT по подписке — опция переключения одним конфигом.
 
 ### 4. Скиллы и промпт
 
@@ -58,9 +58,9 @@
 - Проверить read-only гарантию.
 - Проверить, что в супергруппе каждый бот отвечает в своём топике, а в общем — оба корректно.
 
-## Модель — решено
+## Модель
 
-Plus-подписка есть → финансовый агент на **GPT по подписке** (`openai` через OAuth: `openclaw models auth login --provider openai`), DeepSeek — fallback. Точный список моделей под аккаунт — `openclaw models list --provider openai`.
+Финансовый агент пока на **DeepSeek V4 Pro** (тот же, что основной ассистент). Plus-подписка есть → при желании переключение на GPT по подписке одним конфигом (`openclaw models auth login --provider openai`), DeepSeek остаётся fallback. Архитектура модель-агностична — ничего не переделываем.
 
 ## Что нужно от Andrey
 
