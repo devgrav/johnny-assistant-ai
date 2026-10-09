@@ -20,9 +20,11 @@
 
 ## Этапы
 
-### 1. Snowball MCP — блокер: ключ от Andrey
+### 1. Snowball MCP — ✅ подключён 2026-10-09
 
-Ключ тарифа Эксперт (генерится один раз, показывается один раз) → в защищённое хранилище `secrets`, не в чат/логи/git. Добавить сервер (`https://snowball-income.com/mcp-server`, Streamable HTTP, `X-API-Key`). Проверить read-only вызов: капитал, портфели, сделки, дивиденды.
+Ключ тарифа Эксперт получен через защищённый ввод. Рабочая схема: значение в `~/.openclaw/.env` (chmod 600, вне git, вне чат-логов), а в конфиге — шаблон `X-API-Key: ${SNOWBALL_API_KEY}` (подстановка из env, ключ в конфиге не лежит). Сервер: `mcp.servers.snowball` → `https://snowball-income.com/mcp-server`, transport `streamable-http`. Проверено: `openclaw mcp probe` → 14 tools; read-only вызов `ListPortfolios` вернул реальные портфели («Мой капитал», «Криптовалюта Bybit»). Гейтвей подхватил конфиг hot reload без рестарта.
+
+Грабли: `openclaw mcp add --header 'X-API-Key=${VAR}'` **портит** значение (сохраняет 4-символьный мусор вместо шаблона) → сервер отбивает запрос, в логах `Streamable HTTP error: Error POSTing to endpoint`. Сохранять сервер нужно через `openclaw config set mcp.servers.<name> '{"url":...,"transport":"streamable-http","headers":{"X-API-Key":"${VAR}"}}'`.
 
 ### 2. Telegram: новый бот + супергруппа-форум — блокер: token бота от Andrey
 
@@ -64,7 +66,7 @@
 
 ## Что нужно от Andrey
 
-1. Ключ **Snowball** (тариф Эксперт) — через защищённый ввод. ← единственный оставшийся блокер.
+~~1. Ключ **Snowball** (тариф Эксперт)~~ — получен 2026-10-09 через защищённый ввод → `~/.openclaw/.env`.
 
 ~~2. Новый Telegram-бот~~ — готово 2026-10-09: аккаунт `financial` в конфиге, бот привязан к `financial-agent`.
 
@@ -72,7 +74,7 @@
 
 - [x] Сводка решений (`assistants/PLAN.md`)
 - [x] Скилл критики (`skills/financial-critic/SKILL.md`)
-- [ ] Этап 1 — Snowball MCP (**ждёт ключ от Andrey**; в `mcp.servers` пока только tutu)
+- [x] Этап 1 — Snowball MCP подключён 2026-10-09 (ключ в `~/.openclaw/.env`, конфиг `mcp.servers.snowball`, 14 tools, read-only `ListPortfolios` ок)
 - [x] Этап 2 — Telegram-бот + супергруппа (аккаунт `financial`, binding на `financial-agent`, топик «Финконсультант» в супергруппе `-1003946723344`, `requireMention=false` в своём топике)
 - [x] Этап 3 — конфиг агента (workspace `workspace/financial-agent`, модель `deepseek/deepseek-v4-pro`, heartbeat/utility на flash, thinkingDefault=low). Примечание: compaction глобально 800kb, не ~200k — пересмотреть, если потребуется.
 - [x] Этап 4 — скиллы и промпт (роль + read-only + критик зашиты в AGENTS.md агента 2026-10-09; SOUL.md остаётся дефолтным — характер фин-агент может дописать сам)

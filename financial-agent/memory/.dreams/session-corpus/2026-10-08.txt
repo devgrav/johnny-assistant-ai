@@ -1,0 +1,10 @@
+[financial-agent/sessions/financial-agent/4649b9e6-e965-44e5-9158-190e9eacfd07#L2] User: @johnny_silver_finance_bot Привет
+[financial-agent/sessions/financial-agent/4649b9e6-e965-44e5-9158-190e9eacfd07#L5] Assistant: Привет, Андрей 👋 Я Johnny — финансовый ассистент. Чем помочь? Могу разобрать расходы, посчитать бюджет, глянуть рынки или что-то проверить по твоим финансам.
+[financial-agent/sessions/financial-agent/4649b9e6-e965-44e5-9158-190e9eacfd07#L6] User: А сейчас ты здесь?
+[financial-agent/sessions/financial-agent/4649b9e6-e965-44e5-9158-190e9eacfd07#L7] Assistant: Да, здесь. На связи 👋
+[financial-agent/sessions/financial-agent/9a25041d-8e0b-4619-b673-6bc9ff7b7438#L2] User: Привет
+[financial-agent/sessions/financial-agent/9a25041d-8e0b-4619-b673-6bc9ff7b7438#L4] User: Привет
+[financial-agent/sessions/financial-agent/9a25041d-8e0b-4619-b673-6bc9ff7b7438#L6] User: Привет
+[financial-agent/sessions/financial-agent/9a25041d-8e0b-4619-b673-6bc9ff7b7438#L9] Assistant: Привет, Андрей! 👋 Извини за задержку — первые пару сообщений не доходили из-за сбоя с авторизацией провайдера, сейчас всё на месте. Чем могу помочь?
+[financial-agent/sessions/financial-agent/9a25041d-8e0b-4619-b673-6bc9ff7b7438#L10] User: Как ты?
+[financial-agent/sessions/financial-agent/9a25041d-8e0b-4619-b673-6bc9ff7b7438#L11] Assistant: Всё хорошо, работаю в штатном режиме — правда, разбудили меня только с третьего «Привет» 😄 А ты как? Что-нибудь нужно по делам или просто проверяешь, живой ли я?
