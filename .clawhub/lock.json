@@ -176,6 +176,11 @@
           "status": "unsigned"
         }
       }
+    },
+    "@jimliu/baoyu-youtube-transcript": {
+      "version": "1.117.2",
+      "installedAt": 1791635496549,
+      "ownerHandle": "jimliu"
     }
   }
 }
